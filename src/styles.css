@@ -198,10 +198,29 @@ p {
   font-weight: 600;
   font-size: 0.98rem;
   letter-spacing: 0.02em;
+  position: relative;
+  padding: 0.2rem 0;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 100%;
+  height: 2px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
 }
 
 .nav a:hover {
   color: var(--orange);
+}
+
+.nav a:hover::after {
+  transform: scaleX(1);
 }
 
 .header-actions {
@@ -283,8 +302,13 @@ p {
   width: min(420px, 86vw);
   height: auto;
   margin-bottom: 1.25rem;
-  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.45));
   animation: rise-in 700ms ease both;
+}
+
+.brand img,
+.footer-brand img {
+  mix-blend-mode: multiply;
 }
 
 .hero h1 {
@@ -321,18 +345,19 @@ p {
 }
 
 .hero-dots button {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  border: 0;
-  background: rgba(255, 255, 255, 0.45);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.35);
   cursor: pointer;
   padding: 0;
 }
 
 .hero-dots button[aria-selected="true"] {
   background: var(--orange);
-  transform: scale(1.15);
+  border-color: var(--orange);
+  transform: scale(1.2);
 }
 
 @keyframes rise-in {
