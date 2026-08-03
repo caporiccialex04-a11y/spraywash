@@ -366,7 +366,7 @@ p {
 /* Pathway boxes like Deluxe */
 .pathways {
   max-width: 1180px;
-  margin: -2.75rem auto 0;
+  margin: 2rem auto 0;
   padding: 0 1.25rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
